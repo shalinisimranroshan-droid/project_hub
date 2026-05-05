@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Eligibility Checker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Loan Eligibility Checker</h1>
+        <form id="eligibility-form">
+            <label for="age">Age:</label>
+            <input type="number" id="age" required min="1">
+
+            <label for="business-type">Business Type:</label>
+            <select id="business-type" required>
+                <option value="">Select</option>
+                <option value="retail">Retail</option>
+                <option value="manufacturing">Manufacturing</option>
+                <option value="startup">Startup</option>
+                <option value="service">Service</option>
+                <option value ="Trading">Trading</option>
+            </select>
+
+            <label for="vintage">Business Vintage (Years):</label>
+            <input type="number" id="vintage" required min="0">
+
+            <label for="income">Monthly Income ($):</label>
+            <input type="number" id="income" required min="0">
+
+            <label for="turnover">Annual Turnover ($):</label>
+            <input type="number" id="turnover" required min="0">
+
+            <label for="credit-score">Credit Score:</label>
+            <input type="number" id="credit-score" required min="300" max="850">
+
+            <label for="defaults">Past Defaults:</label>
+            <input type="number" id="defaults" required min="0">
+
+            <label for="loan-amount">Loan Amount Requested ($):</label>
+            <input type="number" id="loan-amount" required min="0">
+
+            <label for="tenure">Loan Tenure (Months):</label>
+            <input type="number" id="tenure" required min="1">
+
+            <label for="collateral">Collateral Value ($):</label>
+            <input type="number" id="collateral" required min="0">
+
+            <button onclick="CheckEligibility(data)">Check Eligibility</button>
+            <script src="resonse.js"></script>
+        
+        </form>
+        <div id="results" class="hidden">
+            <h2>Eligibility Results</h2>
+            <p>ML Risk Score: <span id="risk-score"></span></p>
+            <p>Risk Category: <span id="risk-category"></span></p>
+            <p>Final Decision: <span id="decision"></span></p>
+        
+    
+</body>
+</html>
